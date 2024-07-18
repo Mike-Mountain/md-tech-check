@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$md-tech-check-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($md-tech-check-theme);
+}
