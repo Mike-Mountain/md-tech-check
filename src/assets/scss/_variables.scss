@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
 
 :root {
-  --primary: #{map-get(mat.$cyan-palette, 500)};
-  --accent: #{map-get(mat.$orange-palette, 500)};
-  --warn: #{map-get(mat.$red-palette, 500)};
-  --background: #{map-get(mat.$cyan-palette, 300)};
+  --primary: #{map-get(mat.$cyan-palette, 50)};
+  --accent: #{map-get(mat.$orange-palette, 50)};
+  --warn: #{map-get(mat.$red-palette, 50)};
+  --background: #{map-get(mat.$cyan-palette, 30)};
 }

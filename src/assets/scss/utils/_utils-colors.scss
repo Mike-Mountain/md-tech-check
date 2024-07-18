@@ -1,0 +1,73 @@
+// 1. Background Colours
+.bg-color-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-color-accent {
+  background-color: var(--accent) !important;
+}
+
+.bg-black-shade {
+  background-color:rgba(255, 255, 255, 0.12);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+//2. Text Colours
+
+.text-color-primary {
+  color: var(--primary) !important;
+}
+
+.text-color-accent {
+  color: var(--accent);
+}
+
+.text-color-warn {
+  color: var(--warn);
+}
+
+.text-color-white {
+  color: white !important;
+}
+
+.text-color-black {
+  color: black !important;
+}
+
+.text-shadow {
+  text-shadow: black 1px 0 10px;
+}
+
+//3. Line colours
+
+.primary-line-break {
+  background-color: var(--primary);
+  height: 1px;
+}
+
+//4. Border Colors
+.border-white {
+  border-color: white !important;
+}
+
+.border-black {
+  border-color: black !important;
+}
+
+.border-primary {
+  border-color: var(--accent) !important;
+}
+
+.border-accent {
+  border-color: var(--accent) !important;
+}
+
+.border-warn {
+  border-color: var(--warn) !important;
+}
+
+
+

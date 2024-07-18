@@ -1,6 +1,8 @@
 @use '@angular/material' as mat;
 
 @include mat.core();
+@import "./variables";
+@import "./utils/index";
 
 $md-tech-check-theme: mat.define-theme((
   color: (

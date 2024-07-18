@@ -1,0 +1,25 @@
+.app-layout {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 3.5rem 1fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+  'top-menu top-menu'
+  'sidebar content';
+}
+
+.menu-bar {
+  grid-area: top-menu;
+}
+
+.sidebar {
+  background: var(--accent);
+  grid-area: sidebar;
+}
+
+.content {
+  background: var(--warn);
+  grid-area: content;
+}

@@ -1,0 +1,158 @@
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-overflow-visible {
+  text-overflow: inherit;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-monospace {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.fs-1 {
+  font-size: 2rem !important;
+}
+
+.fs-2 {
+  font-size: 1.75rem !important;
+}
+
+.fs-3 {
+  font-size: 1.5rem !important;
+}
+
+.fs-4 {
+  font-size: 1.25rem !important;
+}
+
+.fs-5 {
+  font-size: 1rem !important;
+}
+
+.fs-6 {
+  font-size: 0.75rem !important;
+}
+
+.ls-0-1 {
+  letter-spacing: 0.1px !important;
+}
+
+.ls-0-15 {
+  letter-spacing: 0.15px !important;
+}
+
+.ls-0-4 {
+  letter-spacing: 0.4px !important;
+}
+
+.ls-0-5 {
+  letter-spacing: 0.5px !important;
+}
+
+.ls-1-5 {
+  letter-spacing: 1.5px !important;
+}
+
+.header-font {
+  font-family: 'mtn-bold' !important;
+}
+
+.mtn-regular {
+  font-family: 'mtn-regular' !important;
+}
+
+.mtn-light {
+  font-family: 'mtn-light' !important;
+}
+
+.fs-10 {
+  font-size: 10px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
+
+.fs-24 {
+  font-size: 24px !important;
+}
+
+.line-height-12 {
+  line-height: 16px !important;
+}
+
+.line-height-16 {
+  line-height: 16px !important;
+}
+
+.line-height-24 {
+  line-height: 24px !important;
+}
+
+.line-height-28 {
+  line-height: 28px !important;
+}
+
+.line-height-32 {
+  line-height: 32px !important;
+}
