@@ -36,7 +36,18 @@
 }
 
 .add-post-button {
+  // TODO: This isn't working properly
   position: sticky;
   bottom: .5rem;
   left: 75%;
+}
+
+@media (max-width: 900px) {
+  .blog-navigation {
+    max-height: 100vh;
+    height: calc(100vh - 3rem);
+    overflow-y: scroll;
+    position: relative;
+    background-color: rgba(25, 28, 28, 0.8);
+  }
 }

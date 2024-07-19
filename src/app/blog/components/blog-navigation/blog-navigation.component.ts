@@ -7,8 +7,7 @@ import {
   MatExpansionPanelTitle
 } from "@angular/material/expansion";
 import {AsyncPipe, NgIf} from "@angular/common";
-import {map, Observable, tap} from "rxjs";
-import {Post} from "../../models/posts.model";
+import {map} from "rxjs";
 import {MatFabButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 import {Router} from "@angular/router";
