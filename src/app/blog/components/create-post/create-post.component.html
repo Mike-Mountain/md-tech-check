@@ -1,0 +1,40 @@
+<section class="create-post">
+  <ng-container *ngIf="postForm$ | async as postForm">
+    @if (postForm) {
+      <img class="post-header-image" alt="" [src]="'images/' + postForm.controls['image'].value">
+      <mat-card class="w-95 mx-auto transparent-bg">
+        <mat-card-content>
+          <form [formGroup]="postForm">
+            <div class="post-header flex-center flex-column">
+              <mat-form-field class="w-100">
+                <mat-label>Title</mat-label>
+                <input
+                  matInput
+                  formControlName="title"
+                >
+              </mat-form-field>
+              <p class="text-center m-0">By {{ postForm.controls['username'].value }}</p>
+              <div class="profile-pic mb-2"></div>
+              <hr class="w-75 mx-ato">
+            </div>
+            <div class="post-body flex-center mt-3">
+              <mat-form-field class="w-100">
+                <mat-label>Body</mat-label>
+                <textarea
+                  matInput
+                  rows="4"
+                  formControlName="body"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+      <div class="w-100 flex-around">
+        <button mat-raised-button class="w-45 mx-auto mt-4" (click)="cancelCreatePost()">Cancel</button>
+        <button mat-raised-button class="w-45 mx-auto mt-4" (click)="createPost(postForm)">Create Post</button>
+      </div>
+    }
+  </ng-container>
+
+</section>

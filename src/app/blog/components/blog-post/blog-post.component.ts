@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, inject, Renderer2, TemplateRef, ViewChild} from '@angular/core';
 import {PostsService} from "../../services/posts.service";
-import {AsyncPipe, NgIf} from "@angular/common";
+import {AsyncPipe, JsonPipe, NgIf} from "@angular/common";
 import {tap} from "rxjs";
 import {MatCard, MatCardContent} from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
@@ -22,7 +22,8 @@ import {AbstractControl, FormControl, ReactiveFormsModule} from "@angular/forms"
     MatFormField,
     MatInput,
     MatLabel,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JsonPipe
   ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.scss'

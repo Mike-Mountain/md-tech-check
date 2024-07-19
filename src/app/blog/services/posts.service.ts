@@ -4,6 +4,8 @@ import {Post, User} from "../models/posts.model";
 import {HttpClient} from "@angular/common/http";
 import {usernames} from "../data/usernames.data";
 import {images} from "../data/images.data";
+import {createEmptyPost} from "../utils/post-form.util";
+import {setRandomImage, setRandomUsername} from "../utils/data.util";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,7 @@ export class PostsService {
         return usernames.map(username => {
           return {
             username,
+            id: posts.find(post => post.username === username)?.userId,
             posts: posts.filter(post => post.username === username)
           } as User;
         })
@@ -36,10 +39,14 @@ export class PostsService {
     return this.selectedPostSrc.asObservable();
   }
 
-  public setSelectedPost(postId: number) {
-    const posts = this.postsSrc.value;
-    const selectedPost = posts.find(post => post.id === postId);
-    this.selectedPostSrc.next(selectedPost);
+  public setSelectedPost(postId?: number) {
+    if (postId) {
+      const posts = this.postsSrc.value;
+      const selectedPost = posts.find(post => post.id === postId);
+      this.selectedPostSrc.next(selectedPost);
+    } else {
+      this.selectedPostSrc.next(createEmptyPost());
+    }
   }
 
   public fetchAllPosts() {
@@ -48,8 +55,8 @@ export class PostsService {
       .pipe(
         map(posts => {
           return posts.map(post => {
-            post.username = this.setRandomUsername();
-            post.image = this.setRandomImage();
+            post.username = setRandomUsername();
+            post.image = setRandomImage();
             return post;
           })
         }),
@@ -77,11 +84,13 @@ export class PostsService {
       })
   }
 
-  private setRandomUsername() {
-    return usernames[Math.floor(Math.random() * usernames.length)];
-  }
-
-  private setRandomImage() {
-    return images[Math.floor(Math.random() * images.length)];
+  public createPost(post: Post) {
+    const url = `${this.baseUrl}/posts`;
+    this.http.post<Post>(url, post).subscribe(newPost => {
+      const posts = this.postsSrc.value;
+      posts.push(newPost);
+      this.postsSrc.next(posts);
+      this.selectedPostSrc.next(newPost);
+    })
   }
 }

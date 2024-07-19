@@ -1,6 +1,8 @@
 .blog-navigation {
   max-height: 90vh;
+  height: 90vh;
   overflow-y: scroll;
+  position: relative;
 }
 
 .post-navigation-button {
@@ -31,4 +33,10 @@
   background: white;
   color: black;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.add-post-button {
+  position: sticky;
+  bottom: .5rem;
+  left: 75%;
 }

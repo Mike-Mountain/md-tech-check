@@ -9,5 +9,6 @@ export interface Post {
 
 export interface User {
   username: string;
+  id: number;
   posts: Post[];
 }
