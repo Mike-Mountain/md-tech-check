@@ -17,6 +17,8 @@ export class InfoDialogComponent {
   public data = inject(MAT_DIALOG_DATA);
 
   constructor() {
-    this.dialogRef.updateSize('60vw', '30vh');
+    if (this.data.body) {
+      this.dialogRef.updateSize('60vw', '30vh');
+    }
   }
 }

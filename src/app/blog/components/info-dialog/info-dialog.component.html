@@ -1,9 +1,15 @@
 <figure class="info-dialog">
   <div class="content">
-    <h5>{{data.body}}</h5>
-    <div class="w-100 flex-around mt-4">
-      <button mat-raised-button class="w-40" [mat-dialog-close]="false">Cancel</button>
-      <button mat-raised-button class="w-40" [mat-dialog-close]="true">Confirm</button>
-    </div>
+    @if (data.body) {
+      <h5>{{ data.body }}</h5>
+    } @else if (data.image) {
+      <img class="full-size-image" alt="" [src]="data.image">
+    }
+    @if (data.buttons) {
+      <div class="w-100 flex-around mt-4">
+        <button mat-raised-button class="w-40" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button class="w-40" [mat-dialog-close]="true">Confirm</button>
+      </div>
+    }
   </div>
 </figure>

@@ -48,5 +48,6 @@
     } @else {
       <h1 class="text-center w-100">Please select a blog post from the side menu</h1>
     }
+    <p class="view-image text-shadow" (click)="openImageDialog(post.image)">{{post.image}}</p>
   </ng-container>
 </section>

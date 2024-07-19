@@ -64,7 +64,8 @@ export class BlogPostComponent {
 
   openConfirmDialog(postId: number) {
     const data = {
-      body: 'Are you sure you want to delete this post?'
+      body: 'Are you sure you want to delete this post?',
+      buttons: true
     }
     this.dialog.open(InfoDialogComponent, {data})
       .afterClosed()
@@ -78,5 +79,12 @@ export class BlogPostComponent {
 
   deletePost(postId: number) {
     this.postsService.deletePost(postId);
+  }
+
+  openImageDialog(image: string) {
+    const data = {
+      image: `images/${image}`
+    };
+    this.dialog.open(InfoDialogComponent, {data});
   }
 }

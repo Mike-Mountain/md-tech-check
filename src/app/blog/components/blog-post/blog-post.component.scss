@@ -25,3 +25,16 @@
   max-height: 22rem;
   overflow-y: auto;
 }
+
+.view-image {
+  position: absolute;
+  top: 85%;
+  left: .75rem;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .view-image {
+    top: 90%
+  }
+}
