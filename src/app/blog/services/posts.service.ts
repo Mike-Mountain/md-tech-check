@@ -3,6 +3,7 @@ import {BehaviorSubject, map, tap} from "rxjs";
 import {Post, User} from "../models/posts.model";
 import {HttpClient} from "@angular/common/http";
 import {usernames} from "../data/usernames.data";
+import {images} from "../data/images.data";
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,7 @@ export class PostsService {
         map(posts => {
           return posts.map(post => {
             post.username = this.setRandomUsername();
+            post.image = this.setRandomImage();
             return post;
           })
         }),
@@ -61,5 +63,9 @@ export class PostsService {
 
   private setRandomUsername() {
     return usernames[Math.floor(Math.random() * usernames.length)];
+  }
+
+  private setRandomImage() {
+    return images[Math.floor(Math.random() * images.length)];
   }
 }

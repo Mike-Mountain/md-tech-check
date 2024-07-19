@@ -1,0 +1,20 @@
+<section class="blog-post" *ngIf="selectedPost$ | async as post">
+  @if (post) {
+    <img class="post-header-image" alt="" [src]="'images/' + post.image">
+    <mat-card class="w-95 mx-auto transparent-bg">
+      <mat-card-content>
+        <div class="post-header flex-center flex-column">
+          <h2 class="text-center m-0 text-capitalize text-shadow">{{post.title}}</h2>
+          <p class="text-center m-0">By {{post.username}}</p>
+          <div class="profile-pic mb-2"></div>
+          <hr class="w-75 mx-ato">
+        </div>
+        <div class="post-body flex-center mt-3">
+          <p class="text-center" [innerHTML]="post.body"></p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  } @else {
+    <h1 class="text-center w-100">Please select a blog post from the side menu</h1>
+  }
+</section>

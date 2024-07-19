@@ -3,6 +3,7 @@ import {RouterOutlet} from "@angular/router";
 import {NavigationComponent} from "../navigation/navigation.component";
 import {PostsService} from "../../../blog/services/posts.service";
 import {BlogNavigationComponent} from "../../../blog/components/blog-navigation/blog-navigation.component";
+import {BlogPostComponent} from "../../../blog/components/blog-post/blog-post.component";
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +11,8 @@ import {BlogNavigationComponent} from "../../../blog/components/blog-navigation/
   imports: [
     RouterOutlet,
     NavigationComponent,
-    BlogNavigationComponent
+    BlogNavigationComponent,
+    BlogPostComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
