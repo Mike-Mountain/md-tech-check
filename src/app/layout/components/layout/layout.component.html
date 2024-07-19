@@ -5,6 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <app-blog-navigation
+      [isHandset]="isHandset$ | async"
       (closeSidebar)="drawer.close()"
     ></app-blog-navigation>
   </mat-sidenav>

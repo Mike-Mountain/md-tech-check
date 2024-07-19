@@ -6,7 +6,8 @@
 
 .post-header-image {
   position: absolute;
-  height: calc(100vh - 4.6rem);
+  height: 100%;
+  width: 100%;
   top: 0;
   z-index: -2
 }

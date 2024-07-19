@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {PostsService} from "../../services/posts.service";
 import {
   MatAccordion,
@@ -30,10 +30,10 @@ import {Router} from "@angular/router";
   styleUrl: './blog-navigation.component.scss'
 })
 export class BlogNavigationComponent {
+  @Input() isHandset: boolean | null | undefined;
   @Output() closeSidebar = new EventEmitter();
 
   private postsService = inject(PostsService);
-  private router = inject(Router);
 
   public users$ = this.postsService.getAllUsers();
   public selectedPostId$ = this.postsService.getSelectedPost().pipe(map(post => post?.id));
@@ -44,6 +44,8 @@ export class BlogNavigationComponent {
 
   public selectPost(postId: number) {
     this.postsService.setSelectedPost(postId);
-    this.closeSidebar.emit();
+    if (this.isHandset) {
+      this.closeSidebar.emit();
+    }
   }
 }
