@@ -3,6 +3,7 @@ import {PostsService} from "../../services/posts.service";
 import {AsyncPipe, NgIf} from "@angular/common";
 import {tap} from "rxjs";
 import {MatCard, MatCardContent} from "@angular/material/card";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-blog-post',
@@ -11,7 +12,8 @@ import {MatCard, MatCardContent} from "@angular/material/card";
     NgIf,
     AsyncPipe,
     MatCard,
-    MatCardContent
+    MatCardContent,
+    MatButton
   ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.scss'
