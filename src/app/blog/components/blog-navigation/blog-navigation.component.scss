@@ -1,0 +1,34 @@
+.blog-navigation {
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.post-navigation-button {
+  width: 15.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+  color: white;
+  border: none;
+  border-left: 1rem solid transparent;
+  text-align: left;
+  padding: .5rem .25rem .5rem .5rem;
+  text-transform: capitalize;
+  &:last-child {
+    margin-bottom: 1rem;
+  }
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.selected {
+  border-left-color: var(--accent);
+  background: white;
+  color: black;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,20 @@
+<section class="blog-navigation">
+  <mat-accordion *ngIf="users$ | async as users">
+    @for (user of users; track user.username; let idx = $index) {
+      <mat-expansion-panel [expanded]="idx === 0 && user.posts.length > 0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ user.username }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        @for (post of user.posts; track post.id) {
+          <button
+            class="post-navigation-button"
+            [class.selected]="(selectedPostId$ | async) === post.id"
+            (click)="selectPost(post.id)"
+          >
+            {{ post.title }}
+          </button>
+        }
+      </mat-expansion-panel>
+    }
+  </mat-accordion>
+</section>

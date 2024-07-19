@@ -1,3 +1,11 @@
 @import "assets/scss/theme";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-expansion-panel {
+  // TODO: Set up custom bg colors
+  background: var(--primary) !important;
+}
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
