@@ -54,11 +54,27 @@ export class PostsService {
           })
         }),
         tap(posts => {
+          // TODO: Sort the posts based on DateCreated so that they do not move places in the navigation when updating
           const userPosts = posts.filter(post => post.username === 'Aisha Snow');
           this.selectedPostSrc.next(userPosts[0])
         })
       )
       .subscribe(posts => this.postsSrc.next(posts));
+  }
+
+  public updatePost(post: Post) {
+    const url = `${this.baseUrl}/posts/${post.id}`;
+    this.http.put<Post>(url, post)
+      .pipe(
+        tap(updatedPost => {
+          const posts = this.postsSrc.value.filter(item => item.id !== updatedPost.id);
+          posts.push(updatedPost);
+          this.postsSrc.next(posts);
+        })
+      )
+      .subscribe((updatedPost: Post) => {
+        this.selectedPostSrc.next(updatedPost);
+      })
   }
 
   private setRandomUsername() {
