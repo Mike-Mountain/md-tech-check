@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {PostsService} from "../../services/posts.service";
 import {
   MatAccordion,
@@ -30,6 +30,8 @@ import {Router} from "@angular/router";
   styleUrl: './blog-navigation.component.scss'
 })
 export class BlogNavigationComponent {
+  @Output() closeSidebar = new EventEmitter();
+
   private postsService = inject(PostsService);
   private router = inject(Router);
 
@@ -42,10 +44,6 @@ export class BlogNavigationComponent {
 
   public selectPost(postId: number) {
     this.postsService.setSelectedPost(postId);
-  }
-
-  addPost() {
-    this.postsService.setSelectedPost();
-    this.router.navigateByUrl('/create');
+    this.closeSidebar.emit();
   }
 }

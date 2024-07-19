@@ -1,42 +1,17 @@
-.app-layout {
-  width: 100%;
+.sidenav-container {
   height: 100%;
-  padding: 0;
-  display: grid;
-  grid-template-rows: 3.5rem 1fr;
-  grid-template-columns: 1fr 3fr;
-  grid-template-areas:
-    'top-menu top-menu'
-    'sidebar content';
 }
 
-.menu-bar {
-  grid-area: top-menu;
+.sidenav {
+  width: 200px;
 }
 
-.sidebar {
-  grid-area: sidebar;
+.sidenav .mat-toolbar {
+  background: inherit;
 }
 
-.content {
-  grid-area: content;
-}
-
-@media (max-width: 900px) {
-  .app-layout {
-    position: relative;
-    grid-template-rows: 3.5rem 1fr;
-    grid-template-columns: 0 3fr;
-    grid-template-areas:
-      'top-menu top-menu'
-      'content';
-  }
-
-  .sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    z-index: 5;
-  }
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }

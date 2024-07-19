@@ -1,9 +1,10 @@
 import {Component, Input} from '@angular/core';
 import {RouterLink} from "@angular/router";
-import {MatIconButton} from "@angular/material/button";
+import {MatIconButton, MatMiniFabButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 import {Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-navigation',
@@ -12,7 +13,9 @@ import {AsyncPipe} from "@angular/common";
     RouterLink,
     MatIconButton,
     MatIcon,
-    AsyncPipe
+    AsyncPipe,
+    MatMiniFabButton,
+    MatTooltip
   ],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'

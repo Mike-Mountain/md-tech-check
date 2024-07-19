@@ -1,11 +1,27 @@
-<section class="app-layout">
-  <div class="menu-bar">
-    <app-navigation></app-navigation>
-  </div>
-  <div class="sidebar">
-    <app-blog-navigation></app-blog-navigation>
-  </div>
-  <main class="content">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <app-blog-navigation
+      (closeSidebar)="drawer.close()"
+    ></app-blog-navigation>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+      <span>md-tech-check</span>
+      <app-navigation></app-navigation>
+    </mat-toolbar>
     <router-outlet></router-outlet>
-  </main>
-</section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

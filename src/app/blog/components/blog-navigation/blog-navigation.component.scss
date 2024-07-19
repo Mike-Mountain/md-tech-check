@@ -6,7 +6,7 @@
 }
 
 .post-navigation-button {
-  width: 15rem;
+  width: 10rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -36,9 +36,8 @@
 }
 
 .add-post-button {
-  // TODO: This isn't working properly
+  margin-top: .5rem;
   position: sticky;
-  bottom: .5rem;
   left: 75%;
 }
 

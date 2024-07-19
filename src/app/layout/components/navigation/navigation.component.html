@@ -1,14 +1,17 @@
-<nav class="app-navigation flex-between">
-  <a routerLink="">
+<nav class="app-navigation flex-end">
+  <a routerLink="" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Home'">
     <button mat-icon-button>
       <mat-icon>home</mat-icon>
     </button>
   </a>
-  <div class="nav-links">
-    <a routerLink="">
-      <button mat-icon-button>
-        <mat-icon>code</mat-icon>
-      </button>
-    </a>
-  </div>
+  <a routerLink="" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Github'">
+    <button mat-icon-button>
+      <mat-icon>code</mat-icon>
+    </button>
+  </a>
+  <a routerLink="/create" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Add Post'">
+    <button mat-mini-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+  </a>
 </nav>
