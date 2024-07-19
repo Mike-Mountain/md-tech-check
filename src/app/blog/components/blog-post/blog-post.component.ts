@@ -11,6 +11,7 @@ import {createIndividualFields} from "../../utils/post-form.util";
 import {AbstractControl, FormControl, ReactiveFormsModule} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {InfoDialogComponent} from "../info-dialog/info-dialog.component";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-blog-post',
@@ -25,7 +26,8 @@ import {InfoDialogComponent} from "../info-dialog/info-dialog.component";
     MatInput,
     MatLabel,
     ReactiveFormsModule,
-    JsonPipe
+    JsonPipe,
+    MatIcon
   ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.scss'

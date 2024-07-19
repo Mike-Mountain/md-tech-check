@@ -1,12 +1,12 @@
 <nav class="app-navigation flex-end">
   <a routerLink="" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Home'">
     <button mat-icon-button>
-      <mat-icon>home</mat-icon>
+      <mat-icon class="text-color-accent">home</mat-icon>
     </button>
   </a>
   <a routerLink="" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Github'">
     <button mat-icon-button>
-      <mat-icon>code</mat-icon>
+      <mat-icon class="text-color-accent">code</mat-icon>
     </button>
   </a>
   <a routerLink="/create" class="mx-1" [matTooltip]="(isHandset$ | async) ? '' : 'Add Post'">

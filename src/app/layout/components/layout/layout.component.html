@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="bg-color-primary">Blog Posts</mat-toolbar>
     <app-blog-navigation
       [isHandset]="isHandset$ | async"
       (closeSidebar)="drawer.close()"
@@ -17,10 +17,10 @@
           aria-label="Toggle sidenav"
           mat-icon-button
           (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          <mat-icon aria-label="Side nav toggle icon" class="text-color-primary">menu</mat-icon>
         </button>
       }
-      <span>md-tech-check</span>
+      <h5 class="text-color-primary">md-tech-check</h5>
       <app-navigation></app-navigation>
     </mat-toolbar>
     <router-outlet></router-outlet>
