@@ -69,6 +69,16 @@ export class PostsService {
       .subscribe(posts => this.postsSrc.next(posts));
   }
 
+  public createPost(post: Post) {
+    const url = `${this.baseUrl}/posts`;
+    this.http.post<Post>(url, post).subscribe(newPost => {
+      const posts = this.postsSrc.value;
+      posts.push(newPost);
+      this.postsSrc.next(posts);
+      this.selectedPostSrc.next(newPost);
+    })
+  }
+
   public updatePost(post: Post) {
     const url = `${this.baseUrl}/posts/${post.id}`;
     this.http.put<Post>(url, post)
@@ -84,13 +94,12 @@ export class PostsService {
       })
   }
 
-  public createPost(post: Post) {
-    const url = `${this.baseUrl}/posts`;
-    this.http.post<Post>(url, post).subscribe(newPost => {
-      const posts = this.postsSrc.value;
-      posts.push(newPost);
-      this.postsSrc.next(posts);
-      this.selectedPostSrc.next(newPost);
+  public deletePost(postId: number) {
+    const url = `${this.baseUrl}/posts/${postId}`;
+    this.http.delete(url).subscribe(() => {
+      const filteredPosts = this.postsSrc.value.filter(post => post.id !== postId);
+      this.postsSrc.next(filteredPosts);
+      this.selectedPostSrc.next(filteredPosts[0]);
     })
   }
 }

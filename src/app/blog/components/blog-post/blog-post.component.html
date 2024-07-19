@@ -20,7 +20,7 @@
             <div class="profile-pic mb-2"></div>
             <hr class="w-75 mx-ato">
           </div>
-          <div class="post-body flex-center mt-3">
+          <div class="post-body mt-3">
             @if (isEditing && controls) {
               <mat-form-field class="w-100">
                 <mat-label>Body</mat-label>
@@ -41,7 +41,8 @@
           <button mat-raised-button class="w-45 mx-auto mt-4" (click)="isEditing = false">Cancel</button>
           <button mat-raised-button class="w-45 mx-auto mt-4" (click)="updatePost(post)">Save</button>
         } @else {
-          <button mat-raised-button class="w-65 mx-auto mt-4" (click)="setIsEditing(post)">Edit Post</button>
+          <button mat-raised-button class="w-45 mx-auto mt-4" (click)="openConfirmDialog(post.id)">Delete Post</button>
+          <button mat-raised-button class="w-45 mx-auto mt-4" (click)="setIsEditing(post)">Edit Post</button>
         }
       </div>
     } @else {

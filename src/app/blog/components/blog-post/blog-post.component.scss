@@ -18,3 +18,8 @@
   border-radius: 50%;
   background: url("../../../../../public/images/profile.png") no-repeat center/cover;
 }
+
+.post-body {
+  max-height: 22rem;
+  overflow-y: auto;
+}
