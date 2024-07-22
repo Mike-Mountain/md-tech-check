@@ -7,3 +7,9 @@
 @import "./utils-spacing";
 @import "./utils-visibility";
 @import "./utils-text";
+
+.invisible-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+}

@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
+This project is hosted with github pages and can be found at [Mike-Mountain.github.io/md-tech-check](https://Mike-Mountain.github.io/md-tech-check)
+
+Technologies used: 
+* Angular 18
+* Angular Material 18
+* SCSS
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

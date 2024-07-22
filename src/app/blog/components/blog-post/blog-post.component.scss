@@ -9,7 +9,16 @@
   height: 100%;
   width: 100%;
   top: 0;
-  z-index: -2
+  z-index: -2;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.post-title {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+  width: 100%;
 }
 
 .profile-pic {
@@ -31,10 +40,11 @@
   top: 85%;
   left: .75rem;
   text-decoration: underline;
+  color: white;
 }
 
 @media (max-width: 900px) {
   .view-image {
-    top: 90%
+    top: 87%
   }
 }

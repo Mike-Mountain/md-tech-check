@@ -1,6 +1,7 @@
 <section class="blog-post">
   <ng-container *ngIf="selectedPost$ | async as post">
     @if (post) {
+    <!--// TODO: Get multiple versions of each image optimized for different screen sizes-->
       <img class="post-header-image" alt="" [src]="'images/' + post.image">
       <mat-card class="w-95 mx-auto transparent-bg">
         <mat-card-content>
@@ -14,7 +15,7 @@
                 >
               </mat-form-field>
             } @else {
-              <h2 class="text-center m-0 text-capitalize text-shadow">{{ post.title }}</h2>
+              <h5 class="post-title text-shadow">{{ post.title }}</h5>
             }
             <p class="text-center m-0">By {{ post.username }}</p>
             <mat-icon class="profile-pic mb-2 text-shadow">account_circle</mat-icon>
@@ -48,6 +49,6 @@
     } @else {
       <h1 class="text-center w-100">Please select a blog post from the side menu</h1>
     }
-    <p class="view-image text-shadow" (click)="openImageDialog(post.image)">{{post.image}}</p>
+    <button class="invisible-button view-image text-shadow invisible-button" (click)="openImageDialog(post.image)">View Image</button>
   </ng-container>
 </section>

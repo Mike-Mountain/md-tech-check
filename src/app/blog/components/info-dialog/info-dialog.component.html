@@ -1,9 +1,12 @@
 <figure class="info-dialog">
   <div class="content">
     @if (data.body) {
-      <h5>{{ data.body }}</h5>
+      <h6 class="text-center">{{ data.body }}</h6>
     } @else if (data.image) {
       <img class="full-size-image" alt="" [src]="data.image">
+      <div class="w-100 flex-center mb-1">
+        <small>{{ data.image }}</small>
+      </div>
     }
     @if (data.buttons) {
       <div class="w-100 flex-around mt-4">
